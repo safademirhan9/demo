@@ -3,15 +3,10 @@
  */
 package demo.app;
 
-import demo.list.LinkedList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
-
-import static demo.utilities.StringUtils.join;
-import static demo.utilities.StringUtils.split;
-import static demo.app.MessageUtils.getMessage;
 
 import static spark.Spark.get;
 import static spark.Spark.port;
