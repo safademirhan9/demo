@@ -30,6 +30,11 @@ public class App {
         return false;
     }
     public static void main(String[] args) {
+        //Logger logger = Logger.getLogger(App.class.getName());
+        Logger logger = LogManager.getLogger(App.class);
+        int port = Integer.parseInt(System.getenv("PORT"));
+        port(port);
+        logger.error("Current port number:" + port);
         port(getHerokuAssignedPort());
         get("/", (req, res) -> "Hello, World");
         post("/compute", (req, res) -> {
@@ -57,10 +62,6 @@ public class App {
         Map<String, String> map = new HashMap<String, String>();
         map.put("result", "not computed yet!");
         return new ModelAndView(map, "compute.mustache");
-        Logger logger = Logger.getLogger(App.class.getName());
-        int port = Integer.parseInt(System.getenv("PORT"));
-        port(port);
-        logger.error("Current port number:" + port);
         },
     new MustacheTemplateEngine());
     }
