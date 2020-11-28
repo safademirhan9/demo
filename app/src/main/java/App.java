@@ -30,7 +30,6 @@ public class App {
         return false;
     }
     public static void main(String[] args) {
-        //Logger logger = Logger.getLogger(App.class.getName());
         Logger logger = LogManager.getLogger(App.class);
         int port = Integer.parseInt(System.getenv("PORT"));
         port(port);
