@@ -21,11 +21,11 @@ public class App {
     public String getGreeting() {
         return "Hello world.";
     }
-    public static boolean search(ArrayList<Integer> array, int e) {
+    public static boolean search(ArrayList<Integer> array, int num1, int num2) {
         System.out.println("inside search");
         if (array == null) return false;
         for (int elt : array) {
-            if (elt == e) return true;
+            if (elt == num1*num2) return true;
         }
         return false;
     }
@@ -50,8 +50,10 @@ public class App {
         sc1.close();
         System.out.println(inputList);
         String input2 = req.queryParams("input2").replaceAll("\\s","");
+        String input3 = req.queryParams("input3").replaceAll("\\s","");
         int input2AsInt = Integer.parseInt(input2);
-        boolean result = App.search(inputList, input2AsInt);
+        int input3AsInt = Integer.parseInt(input3);
+        boolean result = App.search(inputList, input2AsInt, input3AsInt);
         Map<String, Boolean> map = new HashMap<String, Boolean>();
         map.put("result", result);
         return new ModelAndView(map, "compute.mustache");
