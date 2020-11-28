@@ -47,7 +47,7 @@ dependencies {
 application {
     // Define the main class for the application.
     mainClass = 'demo.App'
-    mainClassName = 'demo.App';
+    mainClassName = 'demo.App'
 }
 
 tasks.named('test') {
