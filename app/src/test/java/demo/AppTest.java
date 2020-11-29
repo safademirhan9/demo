@@ -32,6 +32,6 @@ class AppTest {
     @Test
     public void testFoundMore() {
         ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 4, 4));
-        assertFalse(App.search(array, 2, 2));
+        assertTrue(App.search(array, 2, 2));
     }
 }
